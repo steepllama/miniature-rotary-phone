@@ -1,0 +1,26 @@
+{
+  "name": "miniature-rotary-phone",
+  "version": "1.0.0",
+  "description": "Module 10 project",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steepllama/miniature-rotary-phone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steepllama/miniature-rotary-phone/issues"
+  },
+  "homepage": "https://github.com/steepllama/miniature-rotary-phone#readme",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
+}
