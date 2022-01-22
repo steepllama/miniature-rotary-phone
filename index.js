@@ -6,6 +6,9 @@ const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
+const { exit } = require('process');
+
+let teamMembers = []
 
 const bossQuestions = () => {
     return inquirer.prompt([
@@ -32,21 +35,26 @@ const bossQuestions = () => {
         {
             type: 'list',
             name: 'addPeople',
-            message: [`Engineer, Intern, Neither`],
+            message: "Would you like to add another employee?",
+            choices: [`Engineer, Intern, Neither`]
         }
     ])
-    .then((answer) => {
+    .then(({ answer }) => {
 
-        const Manager = new Manager (answer.name, answer.id, answer.email, answer.officeNumber);
-        bossQuestions.push(bossQuestions.addPeople) {
+        const manager = new Manager (answer.name, answer.id, answer.email, answer.officeNumber);
+        teamMembers.push(manager)
+        switch (answer.addPeople) {
             case 'Engineer':
-                EngineerQuestions;
+                EngineerQuestions();
                 break;
             case 'Intern':
                 InternQuestions();
                 break;
+            case 'Neither':
+                exit();
+                break;
             default:
-
+                break;
         }
     });
 };
@@ -79,17 +87,23 @@ const EngineerQuestions = () => {
             message: [`Engineer, Intern, Neither`],
         }
         ])
-    .then((answer) => {
-        const Engineer = new Engineer(answer.name, answer.id, answer.email, answer.github)
-        EngineerQuestions.push(EngineerQuestions.addPeople) {
+    .then(({ answer }) => {
+
+        const engineer = new Engineer(answer.name, answer.id, answer.email, answer.github)
+        teamMembers.push(engineer)
+        switch (answer.addPeople) {
             case 'Engineer':
                 EngineerQuestions();
                 break;
             case 'Intern':
                 InternQuestions();
                 break;
-            default:
-        }
+            case 'Neither':
+                exit();
+                    break;
+                default:
+                    break;
+            }
     })
 }; 
 
@@ -122,17 +136,25 @@ const InternQuestions = () => {
             message: [`Engineer, Intern, Neither`],
         }
     ])
-    .then((answer) => {
-        const Intern = new Intern(answer.name, answer.id, answer.email, answer.school)
-        InternQuestions.push(InternQuestions.addPeople){
+    .then(({ answer }) => {
+
+
+        const intern = new Intern(answer.name, answer.id, answer.email, answer.school)
+        teamMembers.push(intern)
+        switch (answer.addPeople) {
             case 'Engineer':
                 EngineerQuestions();
                 break;
             case 'Intern':
                 InternQuestions();
                 break;
+            case 'Exit':
+                exit();
+                break;
             default:
+                break;
         }
-    })
+        }
+    )
 };
 
