@@ -3,7 +3,9 @@ const fs = require('fs');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
+const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
 
 const bossQuestions = () => {
     return inquirer.prompt([
@@ -36,8 +38,17 @@ const bossQuestions = () => {
     .then((answer) => {
 
         const Manager = new Manager (answer.name, answer.id, answer.email, answer.officeNumber);
-        workers.push(bossQuestions.addPeople);
-    })
+        bossQuestions.push(bossQuestions.addPeople) {
+            case 'Engineer':
+                EngineerQuestions;
+                break;
+            case 'Intern':
+                InternQuestions();
+                break;
+            default:
+
+        }
+    });
 };
 
 const EngineerQuestions = () => {
@@ -68,6 +79,18 @@ const EngineerQuestions = () => {
             message: [`Engineer, Intern, Neither`],
         }
         ])
+    .then((answer) => {
+        const Engineer = new Engineer(answer.name, answer.id, answer.email, answer.github)
+        EngineerQuestions.push(EngineerQuestions.addPeople) {
+            case 'Engineer':
+                EngineerQuestions();
+                break;
+            case 'Intern':
+                InternQuestions();
+                break;
+            default:
+        }
+    })
 }; 
 
 const InternQuestions = () => {
@@ -99,5 +122,17 @@ const InternQuestions = () => {
             message: [`Engineer, Intern, Neither`],
         }
     ])
-}
+    .then((answer) => {
+        const Intern = new Intern(answer.name, answer.id, answer.email, answer.school)
+        InternQuestions.push(InternQuestions.addPeople){
+            case 'Engineer':
+                EngineerQuestions();
+                break;
+            case 'Intern':
+                InternQuestions();
+                break;
+            default:
+        }
+    })
+};
 
