@@ -2,7 +2,9 @@ const Engineer = require('../lib/Engineer');
 
 
 test("Set github account", () => {
-    const value = 'githubUser';
-    const member = new Engineer('Name', 1, 'name@name.com', value);
-    expect(member.github).toBe(value)
+    const engineer = new Engineer ('sem', '123', 'email', 'steepllama')
+    expect(engineer.name).toBe('sem')
+    expect(engineer.id).toBe('123')
+    expect(engineer.email).toBe('email')
+    expect(engineer.github).toBe('steepllama')
 });

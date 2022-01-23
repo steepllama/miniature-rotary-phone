@@ -1,0 +1,23 @@
+.Our-staff-header {
+    background-color: red;
+    text-align: center;
+    height: 100px;
+    text-align: center;
+}
+
+.card-container {
+    width: 200px;
+    height: 225px;
+}
+
+.upper-container {
+    height: 90px;
+    background: #298ae4;
+}
+
+.list-requirements {
+    position: relative;
+    display: block;
+    background-color: rgba(206, 202, 202, 0.411);
+    border: 2px solid;
+}
