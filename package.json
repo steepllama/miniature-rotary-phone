@@ -22,5 +22,8 @@
   "homepage": "https://github.com/steepllama/miniature-rotary-phone#readme",
   "devDependencies": {
     "jest": "^27.4.7"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.0"
   }
 }
